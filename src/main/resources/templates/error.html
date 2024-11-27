@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"
+      data-th-lang="__${#locale.language}__"
+      data-layout-decorate="~{layout/template}">
+<head>
+  <title>This is a sample title</title>
+</head>
+<body>
+  <main data-layout-fragment="content">
+    <div class="container my-5 py-5">
+      <div class="row justify-content-center text-center">
+        <div class="col-md-6">
+          <h1 data-th-text="${status}">404</h1>
+          <h3 data-th-text="${error}">Page Not Found</h3>
+          <div class="pt-5">
+            <a href="#" data-th-href="@{/}" data-th-text="#{error.back-to-index}">Back to Index</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,34 @@
+application:
+    locale:
+        param-name: lang
+        default-language: en_GB
+
+server:
+    compression.enabled: true
+    error.path: /error
+    forward-headers-strategy: FRAMEWORK
+    http2.enabled: true
+    servlet.session.cookie:
+        name: WPGSESSIONID
+        secure: true
+    shutdown: graceful
+
+spring:
+    messages:
+        always-use-message-format: false
+        basename: i18n/messages
+        encoding: UTF-8        
+        fallback-to-system-locale: false
+        use-code-as-default-message: false
+
+    thymeleaf:
+        cache: true
+        encoding: UTF-8
+        mode: HTML
+        suffix: .html
+        
+    web.resources:
+        cache.period: P365D
+        chain.strategy.content:
+            enabled: true
+            paths: /** 

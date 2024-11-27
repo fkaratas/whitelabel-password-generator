@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" data-th-lang="__${#locale.language}__">
+<head>
+<title>This is a sample title</title>
+</head>
+<body>
+  <footer data-th-fragment="footer">
+    <ul class="nav justify-content-center pb-3 mb-3">
+      <li class="nav-item">
+        <a data-bs-toggle="modal" data-bs-target="#legal-notice-modal" class="modal-link nav-link px-2 text-muted" data-th-text="#{index.legal-notice}">Legal Notice</a>
+      </li>
+      <li class="nav-item">
+        <a data-bs-toggle="modal" data-bs-target="#privacy-modal" class="modal-link nav-link px-2 text-muted" data-th-text="#{index.privacy}">Privacy</a>
+      </li>
+    </ul>
+    <p class="text-center text-muted">© [[${#dates.createToday().getYear() + 1900}]] Your Company</p>
+
+    <div class="modal fade" id="legal-notice-modal" tabindex="-1" aria-labelledby="legal-notice-modal-label" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="legal-notice-modal-label" data-th-text="#{index.legal-notice}">Legal Notice</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p data-th-text="#{index.legal-notice-placeholder}">Place your legal notices here</p>
+            <strong>Credits:</strong><br/>
+            Security icons made by <a href="https://www.iconfinder.com/kmgdesignid" title="Kmd Design">Kmd Design</a> and downloaded from <a href="https://www.iconfinder.com/icons/5173021/antivirus_internet_lock_locked_protect_security_shield_icon" title="Iconfinder">www.iconfinder.com</a>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-th-text="#{index.close}">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="modal fade" id="privacy-modal" tabindex="-1" aria-labelledby="privacy-modal-label" aria-hidden="true">
+      <div class="modal-dialog" style="max-width: 1000px;">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="privacy-modal-label" data-th-text="#{index.privacy}">Privacy</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p data-th-text="#{index.privacy-placeholder}">Place your privacy policy here</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" data-th-text="#{index.close}">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" 
+      data-th-lang="__${#locale.language}__"
+      data-layout-decorate="~{layout/template}">
+<head>
+<title>This is a sample title</title>
+</head>
+<body>
+  <main data-layout-fragment="content">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-6">
+          <div class="row">
+            <div class="col-6">
+              <label for="pwLength" class="form-label pt-2" data-th-text="#{index.pwd-form.password-length}">Password length</label>
+            </div>
+            <div class="col-6">
+              <div class="float-end p-2" id="pwLengthOutput" style="color: blue; font-weight: 600; background-color: aliceblue;"></div>
+            </div>
+          </div>
+          <div class="row pb-2">
+            <div class="col-12">
+                <input type="range" class="form-range" min="6" max="128" step="1" id="pwLength" value="16">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <input class="form-check-input" type="checkbox" name="lowercase" id="lowercase" checked>
+              <label class="form-check-label" for="lowercase" data-th-text="#{index.pwd-form.lowercase-characters} + ' (a, b, c, ...)'" data-bs-toggle="tooltip" title="abcdefghijklmnopqrstuvwxyz">Lowercase Characters (a, b, c, ...)</label>
+              <br/>
+              <input class="form-check-input" type="checkbox" name="uppercase" id="uppercase" checked>
+              <label class="form-check-label" for="uppercase" data-th-text="#{index.pwd-form.uppercase-characters} + ' (A, B, C, ...)'" data-bs-toggle="tooltip" title="ABCDEFGHIJKLMNOPQRSTUVWXYZ">Uppercase Characters (A, B, C, ...)</label>
+              <br/>
+              <input class="form-check-input" type="checkbox" name="numbers" id="numbers" checked>
+              <label class="form-check-label" for="numbers" data-th-text="#{index.pwd-form.numbers} + ' (1, 2, 3, ...)'" data-bs-toggle="tooltip" title="1234567890">Numbers (1, 2, 3, ...)</label>
+              <br/>
+              <input class="form-check-input" type="checkbox" name="symbols" id="symbols" checked>
+              <label class="form-check-label" for="symbols" data-th-text="#{index.pwd-form.symbols} + ' (!, $, %, &, ...)'" data-bs-toggle="tooltip" title="!&quot;#$%&'*+,./:;=?@\\^|~">Symbols (!, $, %, &, ...)</label>
+            </div>
+            <div class="col-md-6">
+              <input class="form-check-input" type="checkbox" name="minus" id="minus">
+              <label class="form-check-label" for="minus" data-th-text="#{index.pwd-form.minus} + ' (-)'">Minus (-)</label>
+              <br/>
+              <input class="form-check-input" type="checkbox" name="underscore" id="underscore">
+              <label class="form-check-label" for="underscore" data-th-text="#{index.pwd-form.underscore} + ' (_)'">Underscore (_)</label>
+              <br/>
+              <input class="form-check-input" type="checkbox" name="whitespace" id="whitespace">
+              <label class="form-check-label" for="whitespace" data-th-text="#{index.pwd-form.whitespace} + ' ( )'">Whitespace ( )</label>
+              <br/>
+              <input class="form-check-input" type="checkbox" name="brackets" id="brackets">
+              <label class="form-check-label" for="brackets" data-th-text="#{index.pwd-form.brackets} + ' ([, ], {, }, (, ), &lt;, &gt;)'">Brackets ([, ], {, }, (, ), &lt;, &gt;)</label>
+            </div>
+          </div>
+          <div class="row pt-3">
+            <div class="col-12">
+              <label for="additionalCharacters" class="form-label" data-th-text="#{index.pwd-form.additional-characters}">Additional characters to use</label>
+              <input type="text" class="form-control" name="additionalCharacters" id="additionalCharacters">
+            </div>
+          </div>          
+          <div class="row pt-3">
+            <div class="col-12">
+              <label class="h3" for="result" data-th-text="#{index.pwd-form.your-password}">Your Password</label>
+              <div class="input-group">
+                <input class="form-control form-control-lg" type="text" name="result" id="result" disabled readonly>
+                <button type="button" class="btn btn-outline-secondary" id="generate"><i class="fas fa-sync-alt"></i></button>
+                <button type="button" class="btn btn-outline-secondary" id="copy"><i class="far fa-copy"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="toast-container position-absolute start-50 translate-middle-x bg-success" style="bottom: 15% !important;">
+      <div class="toast" id="copy-success" role="alert" aria-live="assertive" aria-atomic="true" data-bs-animation="false">
+        <div class="toast-body" data-th-text="#{index.toast.password-copied-to-clipboard}">
+          Password has been copied to clipboard
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script data-layout-fragment="scripts" data-th-inline="javascript">
+    $(document).ready(function() {
+        updatePwLength();
+        generateAndSetPassword();
+        
+        $('#pwLength').on("input", function(event, ui) {
+            updatePwLength();
+        });
+        
+        $('#generate').click(function() {
+            generateAndSetPassword();
+        });
+        
+        $('#copy').click(function() {
+            copyToClipboard('#result');
+            $('#copy-success').toast('show');
+        });
+    });
+    
+    function generateAndSetPassword() {
+        const passwordParams = collectPasswordSettings();           
+        const password = generatePassword(passwordParams);
+        $('#result').val(password);         
+    }
+    
+    function collectPasswordSettings() {
+        const pwLength = getParameterById('pwLength');
+        const includeSymbols = getParameterById('symbols');
+        const includeNumbers = getParameterById('numbers');
+        const includeLowercase = getParameterById('lowercase');
+        const includeUppercase = getParameterById('uppercase');
+        const includeMinus = getParameterById('minus');
+        const includeUnderscore = getParameterById('underscore');
+        const includeWhitespace = getParameterById('whitespace');
+        const includeBrackets = getParameterById('brackets');
+        const additionalCharacters = getParameterById('additionalCharacters');
+
+        return new PasswordParameters(pwLength, includeSymbols, includeNumbers, includeLowercase, includeUppercase, includeMinus, includeUnderscore, includeWhitespace, includeBrackets, additionalCharacters);     
+    }
+    
+    function updatePwLength() {
+        const pwLength = getParameterById('pwLength');
+        $('#pwLengthOutput').text(pwLength);        
+        generateAndSetPassword();
+    }
+    
+    function copyToClipboard(element) {
+        var $temp = $("<input>");
+        $("body").append($temp);
+        $temp.val($(element).val()).select();
+        document.execCommand("copy");
+        $temp.remove();
+    }
+  </script>
+</body>
+</html>
