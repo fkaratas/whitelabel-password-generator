@@ -192,10 +192,15 @@
                                 </goals>
                             </execution>
                             <execution>
-                                <id>prepare-agent-integration</id>
+                                <id>report</id>
                                 <goals>
-                                    <goal>prepare-agent-integration</goal>
+                                    <goal>report</goal>
                                 </goals>
+                                <configuration>
+                                    <formats>
+                                        <format>XML</format>
+                                    </formats>
+                                </configuration>
                             </execution>
                         </executions>
                     </plugin>
