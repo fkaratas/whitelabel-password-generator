@@ -29,7 +29,7 @@ jobs:
           distribution: 'temurin'
           cache: maven
       - name: Build
-        run: ./mvnw -Pcoverage clean verify
+        run: ./mvnw ${{ MAVEN_ARGS }} -Pcoverage clean verify
       - name: Analyse with SonarCloud
         if: ${{ matrix.java == 21 && matrix.os == 'ubuntu-latest' }}
         run: >
