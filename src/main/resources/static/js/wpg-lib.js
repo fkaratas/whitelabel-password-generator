@@ -17,8 +17,8 @@ function generatePassword(passwordParams) {
     if (passSrc.length === 0) {
         return;
     }
-    var password = "";
-    for (var i = 0; i < passwordParams.pwLength; i++) {
+    let password = "";
+    for (let i = 0; i < passwordParams.pwLength; i++) {
         const rand = nextCryptoRand();
         password += passSrc[rand % passSrc.length];
     }
@@ -35,7 +35,7 @@ function buildPassSourceString(passwordParams) {
     const whitespace = " ";
     const brackets = "[]{}()<>";
     
-    var passSrc = "";
+    let passSrc = "";
     
     if (passwordParams.includeSymbols) {
         passSrc += symbols;

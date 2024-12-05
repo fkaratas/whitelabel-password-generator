@@ -15,7 +15,7 @@
               <label for="pwLength" class="form-label pt-2" data-th-text="#{index.pwd-form.password-length}">Password length</label>
             </div>
             <div class="col-6">
-              <div class="float-end p-2" id="pwLengthOutput" style="color: blue; font-weight: 600; background-color: aliceblue;"></div>
+              <div class="float-end p-2 pwd-length-output" id="pwLengthOutput"></div>
             </div>
           </div>
           <div class="row pb-2">
@@ -70,7 +70,7 @@
         </div>
       </div>
     </div>
-    <div class="toast-container position-absolute start-50 translate-middle-x bg-success" style="bottom: 15% !important;">
+    <div class="toast-container position-absolute start-50 translate-middle-x bg-success toast-message-position">
       <div class="toast" id="copy-success" role="alert" aria-live="assertive" aria-atomic="true" data-bs-animation="false">
         <div class="toast-body" data-th-text="#{index.toast.password-copied-to-clipboard}">
           Password has been copied to clipboard

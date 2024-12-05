@@ -11,3 +11,17 @@
 	height: 35px;
 	width: 35px;
 }
+
+.pwd-length-output {
+	color: blue;
+	font-weight: 600;
+	background-color: aliceblue;
+}
+
+.toast-message-position {
+	bottom: 15% !important;
+}
+
+.footer-modal-max-width {
+	max-width: 1000px;
+}
