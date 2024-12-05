@@ -36,7 +36,7 @@ jobs:
           ./mvnw $MAVEN_ARGS -Pcoverage verify
           sonar:sonar
           -Dsonar.host.url=https://sonarcloud.io
-          -Dsonar.login=$secrets.SONAR_TOKEN
+          -Dsonar.token=${{ secrets.SONAR_TOKEN }}
           -Dsonar.organization=fkaratas
           -Dsonar.projectKey=fkaratas_whitelabel-password-generator
         env:
