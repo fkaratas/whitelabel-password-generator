@@ -1,4 +1,13 @@
-# Whitelabel Password Generator [![Build Status](https://github.com/fkaratas/whitelabel-password-generator/workflows/Build/badge.svg)](https://github.com/fkaratas/whitelabel-password-generator/actions/workflows/build.yml) [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=fkaratas_whitelabel-password-generator&metric=coverage)](https://sonarcloud.io/summary/overall?id=fkaratas_whitelabel-password-generator)
+# Whitelabel Password Generator 
+
+[![Build Status](https://github.com/fkaratas/whitelabel-password-generator/workflows/Build/badge.svg)](https://github.com/fkaratas/whitelabel-password-generator/actions/workflows/build.yml)
+[![Java 17 or higher](https://img.shields.io/badge/JDK-17%2B-007396)](https://docs.oracle.com/javase/8/)
+
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=fkaratas_whitelabel-password-generator&metric=alert_status)](https://sonarcloud.io/summary/overall?id=fkaratas_whitelabel-password-generator)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=fkaratas_whitelabel-password-generator&metric=security_rating)](https://sonarcloud.io/summary/overall?id=fkaratas_whitelabel-password-generator)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=fkaratas_whitelabel-password-generator&metric=reliability_rating)](https://sonarcloud.io/summary/overall?id=fkaratas_whitelabel-password-generator)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=fkaratas_whitelabel-password-generator&metric=sqale_rating)](https://sonarcloud.io/summary/overall?id=fkaratas_whitelabel-password-generator)
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=fkaratas_whitelabel-password-generator&metric=coverage)](https://sonarcloud.io/summary/overall?id=fkaratas_whitelabel-password-generator)
 
 Whitelabel Password Generator (WPG) is a simple Spring Boot application to host your own Password Generator running in a browser. Extend or brand it according to your needs. A running example can be found [here](https://www.pwd-generator.com).
 
