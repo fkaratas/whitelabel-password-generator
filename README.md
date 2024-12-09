@@ -11,7 +11,7 @@ Whitelabel Password Generator (WPG) is a simple Spring Boot application to host 
 
 ## How to use it
 
-Since WPG is a runnable Spring Boot application, the easiest way to get started is to build the application as a runnable jar
+Since WPG is a Spring Boot application, the easiest way to get started is to build the application as a runnable jar
 ```
 ./mvnw clean package
 ```
