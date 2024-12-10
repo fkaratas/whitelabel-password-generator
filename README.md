@@ -21,7 +21,7 @@ Thanks to bootstrap the application is mobile first and runs in normal desktop b
 
 ## Building
 
-**WPG** requires at least **Java 17** to compile and has been tested with versions of up **Java 21**. In order to build **WPG** simply clone the repository or download the sources and build it via command line: 
+**WPG** requires at least **Java 17** to compile and has been tested with versions up to **Java 21**. In order to build **WPG** simply clone the repository or download the sources and build it via command line: 
 ```
 ./mvnw clean verify
 ```
@@ -39,7 +39,7 @@ and then simply running it
 java -jar <folder and name of jar file>
 ```
 
-Please refer to the official Spring Boot documentation for further information on how to [deploy Spring Boot applications](https://docs.spring.io/spring-boot/3.4/how-to/deployment/index.html)
+Of course there are plenty of further options such as building and deploying a docker image, installing the application as systemd service, etc. Please refer to the official Spring Boot documentation for further information on how to [deploy Spring Boot applications](https://docs.spring.io/spring-boot/3.4/how-to/deployment/index.html)
 
 ## License
 
