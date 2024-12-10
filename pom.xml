@@ -18,8 +18,9 @@
     
     <scm>
         <url>https://github.com/fkaratas/whitelabel-password-generator</url>
-        <connection>scm:git:git@github.com/fkaratas/whitelabel-password-generator.git</connection>
-        <developerConnection>scm:git:ssh:///git@github.com/fkaratas/whitelabel-password-generator.git</developerConnection>
+        <connection>scm:git://github.com/fkaratas/whitelabel-password-generator.git</connection>
+        <developerConnection>scm:git:git@github.com:fkaratas/whitelabel-password-generator.git</developerConnection>
+        <tag>HEAD</tag>
     </scm>
     
     <licenses>
