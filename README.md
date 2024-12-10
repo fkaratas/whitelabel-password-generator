@@ -11,6 +11,14 @@
 
 Whitelabel Password Generator (WPG) is a simple Spring Boot application to host your own Password Generator running in a browser. Extend or brand it according to your needs. A running example can be found [here](https://www.pwd-generator.com).
 
+## Screenshots
+
+Thanks to bootstrap the application is mobile first and runs in normal desktop browsers as well as on mobiles phones
+<div class="center">
+    <img style="width: 65%;" src="./assets/screenshot-big.png">
+    <img style="width: 25%;" src="./assets/screenshot-mobile.png">
+</div>
+
 ## Building
 
 **WPG** requires at least **Java 17** to compile and has been tested with versions of up **Java 21**. In order to build **WPG** simply clone the repository or download the sources and build it via command line: 
@@ -32,17 +40,6 @@ java -jar <folder and name of jar file>
 ```
 
 Please refer to the official Spring Boot documentation for further information on how to [deploy Spring Boot applications](https://docs.spring.io/spring-boot/3.4/how-to/deployment/index.html)
-
-## Screenshots
-
-Thanks to bootstrap the application is mobile first and runs in normal desktop browsers
-
-<img style="width: 75%;" src="./assets/screenshot-big.png">
-
-as well as on mobiles phones
-
-<img src="./assets/screenshot-mobile.png">
-
 
 ## License
 
