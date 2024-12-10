@@ -33,6 +33,17 @@ java -jar <folder and name of jar file>
 
 Please refer to the official Spring Boot documentation for further information on how to [deploy Spring Boot applications](https://docs.spring.io/spring-boot/3.4/how-to/deployment/index.html)
 
+## Screenshots
+
+Thanks to bootstrap the application is mobile first and runs in normal desktop browsers
+
+<img style="width: 75%;" src="./assets/screenshot-big.png">
+
+as well as on mobiles phones
+
+<img src="./assets/screenshot-mobile.png">
+
+
 ## License
 
 [MIT License](LICENSE)
