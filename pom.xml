@@ -55,6 +55,7 @@
 
         <!-- Maven plugin versions -->
         <plugin.jacoco.version>0.8.12</plugin.jacoco.version>
+        <plugin.maven-release.version>3.1.1</plugin.maven-release.version>
         <plugin.sonar-maven.version>5.0.0.4389</plugin.sonar-maven.version>
         <plugin.vnu-maven.version>1.0.0</plugin.vnu-maven.version>
     </properties>
@@ -137,6 +138,15 @@
                     <groupId>org.jacoco</groupId>
                     <artifactId>jacoco-maven-plugin</artifactId>
                     <version>${plugin.jacoco.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>${plugin.maven-release.version}</version>
+                    <configuration>
+                        <preparationGoals>clean verify</preparationGoals>
+                        <goals>deploy</goals>
+                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.sonarsource.scanner.maven</groupId>
